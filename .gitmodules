@@ -1,0 +1,3 @@
+[submodule "gm-test-app-ms"]
+	path = gm-test-app-ms
+	url = https://github.com/korobokvk/gm-test-app-ms
