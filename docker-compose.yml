@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  client:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.dev
+    container_name: client
+    image: client
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+
+  file-service:
+    build:
+      context: ./gm-test-app-ms
+      dockerfile: ./Dockerfile.dev
+    container_name: file-service
+    image: file-service
+    restart: unless-stopped
+    ports:
+      - '8880:8880'
