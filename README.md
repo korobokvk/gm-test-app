@@ -6,11 +6,17 @@
 - Create public bucket on S3
 - Set bucket configs to env variable
 
+`Note: be sure that you pulled and updated all submodules in this repo`
+
 `.env` file used only for development to tun app on prod with you credentials set credentials to Dockerfiles
 
 ## Run NestJS apps
 
 To run Nestjs app in prod mode just run in root directory `docker-compose up --build`
+
+## How work uploading file
+
+To upload file you should use `localhost:8880/graphql` and `uploadFile($files: [Upload!]!)` mutation. This mutation call `uploadFile` method and pass data with `createReadStream` method which provide with `graphql-upload` library in middleware that responsible for file management in graphql. After uploading all files was finished successfully app send notification to client service with operation status.
 
 ## Run React app
 
