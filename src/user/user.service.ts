@@ -20,7 +20,7 @@ export class UserService {
 
   public async getUser(email: string): Promise<UserModel[]> {
     const userData = await this.fetchUserByEmail(email);
-    this.log.log(userData);
+    this.log.log(userData.data);
     return userData.data;
   }
 }

@@ -4,17 +4,17 @@ services:
   client:
     build:
       context: .
-      dockerfile: ./Dockerfile.dev
+      dockerfile: ./Dockerfile
     container_name: client
     image: client
     restart: unless-stopped
     ports:
-      - '3000:3000'
+      - '8080:8080'
 
   file-service:
     build:
       context: ./gm-test-app-ms
-      dockerfile: ./Dockerfile.dev
+      dockerfile: ./Dockerfile
     container_name: file-service
     image: file-service
     restart: unless-stopped

@@ -4,14 +4,15 @@ COPY package*.json ./
 COPY . .
 RUN npm install
 RUN npm run build
-COPY .env ./dist/.env
 
 FROM node:16-alpine
 
+ENV PORT=8080
+ENV HOST=localhost
 
 WORKDIR /app
 COPY package*.json ./
 RUN npm install --only=production
 COPY --from=0 /app/dist ./dist
-EXPOSE 3000
-CMD [ "npm", "start"]
+EXPOSE 8080
+CMD [ "npm", "run", "start:prod"]

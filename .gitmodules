@@ -1,3 +1,6 @@
 [submodule "gm-test-app-ms"]
 	path = gm-test-app-ms
 	url = https://github.com/korobokvk/gm-test-app-ms
+[submodule "gm-test-app-react"]
+	path = gm-test-app-react
+	url = git@github.com:korobokvk/gm-test-app-react.git

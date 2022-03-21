@@ -18,6 +18,9 @@ import { config } from './config';
       driver: ApolloDriver,
       installSubscriptionHandlers: true,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      subscriptions: {
+        'graphql-ws': true,
+      },
     }),
 
     UserModule,
